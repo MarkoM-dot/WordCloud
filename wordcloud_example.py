@@ -15,7 +15,8 @@ text = open(filename, 'r', encoding='utf-8').read()
 
 def calculate_frequencies(text):
 
-#I needed my own list of uninteresting words to remove from my WordCloud and customize it for different texts that I used. You are more than welcome to remove or append the words that you don't want the WC to show. 
+#I needed my own list of uninteresting words to remove from my WordCloud and customize it for different texts that I used. 
+#You are more than welcome to remove or append the words that you don't want the WC to show. 
 
     uninteresting_words = ["the", "however", "hundred", "kept", "saying", "may", "come", "either", "rather",
     "up", "every", "though", "thus", "since", "before", "most", "than", "about", "put", "these", "then", "say",
@@ -34,8 +35,7 @@ def calculate_frequencies(text):
         if x.isalpha() or x == " ":
             sentence += x.lower()
 
-#Remove the uninteresting words from the list of words so we are left with only
-#interesting words.
+#Remove the uninteresting words from the list of words so we are left with only interesting words.
 
     for word in sentence.split():
         if word not in uninteresting_words:
@@ -48,17 +48,20 @@ def calculate_frequencies(text):
             dict_count[word] = 0
         dict_count[word] += 1
 
-#The custom mask is optional, you can comment out custom_mask if you don't want your WordCloud to have a particular appearance. I wanted mine to resemble the parthenon so I used a png image located in the same directory.
+#The custom mask is optional, you can comment out custom_mask if you don't want your WordCloud to have a particular appearance. 
+#I wanted mine to resemble the parthenon so I used a png image located in the same directory.
 #All that you require is to write the name of the image file instead of imagefile. For example, 'testimage.png'
 
     custom_mask = np.array(Image.open(imagefile))
 
-#Generate a wordcloud from our dictionary. You may determine the background color and if you chose not to have a mask you can remove it below. There are other parameters you can adjust and I recommend you check the documentation.
+#Generate a wordcloud from our dictionary. You may determine the background color and if you chose not to have a mask you can remove it below. 
+#There are other parameters you can adjust and I recommend you check the documentation.
 
     cloud = wordcloud.WordCloud(background_color = 'white', mask = custom_mask)
     cloud.generate_from_frequencies(dict_count)
 
-#The interpolation will adjust the smoothness of our image. You may choose your own and see what it might look like in the documentation(https://matplotlib.org/stable/gallery/images_contours_and_fields/interpolation_methods.html)
+#The interpolation will adjust the smoothness of our image. You may choose your own and see what it might look like in the documentation:
+#(https://matplotlib.org/stable/gallery/images_contours_and_fields/interpolation_methods.html).
 #Let's remove the x and y axis that would otherwise appear on our image.
 #We can see the WC image with plt.show().
 
