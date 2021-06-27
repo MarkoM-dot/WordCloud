@@ -11,11 +11,11 @@ os.chdir(sys.path[0])
 
 #Write the name of your text file, from which you wish to make a WordCloud, instead of filename below. For example, 'test.txt'
 
-text = open(filename, 'r', encoding='utf-8').read()
+text = open(sys.argv[1], 'r', encoding='utf-8').read()
 
 def calculate_frequencies(text):
 
-#I needed my own list of uninteresting words to remove from my WordCloud and customize it for different texts that I used. You are more than welcome to remove or append the words that you don't want the WC to show. 
+#I needed my own list of uninteresting words to remove from my WordCloud and customize it for different texts that I used. You are more than welcome to remove or append the words that you don't want the WC to show.
 
     uninteresting_words = ["the", "however", "hundred", "kept", "saying", "may", "come", "either", "rather",
     "up", "every", "though", "thus", "since", "before", "most", "than", "about", "put", "these", "then", "say",
@@ -51,7 +51,7 @@ def calculate_frequencies(text):
 #The custom mask is optional, you can comment out custom_mask if you don't want your WordCloud to have a particular appearance. I wanted mine to resemble the parthenon so I used a png image located in the same directory.
 #All that you require is to write the name of the image file instead of imagefile. For example, 'testimage.png'
 
-    custom_mask = np.array(Image.open(imagefile))
+    custom_mask = np.array(Image.open(sys.argv[2]))
 
 #Generate a wordcloud from our dictionary. You may determine the background color and if you chose not to have a mask you can remove it below. There are other parameters you can adjust and I recommend you check the documentation.
 
