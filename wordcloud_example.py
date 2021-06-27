@@ -9,7 +9,10 @@ import sys
 
 os.chdir(sys.path[0])
 
-#Write the name of your text file, from which you wish to make a WordCloud, instead of filename below. For example, 'test.txt'
+#Now in the command line you can write as your first argument the text file
+#Here is my PowerShell example as written in the command line:
+#python wordcloud_example.py RomeoandJuliet.txt heart.jpeg
+#My first argument is my desired text and the second argument is my mask
 
 text = open(sys.argv[1], 'r', encoding='utf-8').read()
 
@@ -48,8 +51,7 @@ def calculate_frequencies(text):
             dict_count[word] = 0
         dict_count[word] += 1
 
-#The custom mask is optional, you can comment out custom_mask if you don't want your WordCloud to have a particular appearance. I wanted mine to resemble the parthenon so I used a png image located in the same directory.
-#All that you require is to write the name of the image file instead of imagefile. For example, 'testimage.png'
+#The mask will be the second argument in the command line 
 
     custom_mask = np.array(Image.open(sys.argv[2]))
 
