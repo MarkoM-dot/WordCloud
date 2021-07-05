@@ -9,6 +9,7 @@ I used an image of the parthenon as the mask. You are welcome to use your own te
 
 ![](Figure1.png)
 
-This image is taken with a different heart shaped mask and the text is taken from Shakespeare's Romeo and Juliet.
+This image is taken with a different heart shaped mask and the text is taken from Shakespeare's Romeo and Juliet. I've taken out some key character names to make 
+it a little make the word cloud a little more challenging for the viewer.
 
 ![](RandJCloud.png)
