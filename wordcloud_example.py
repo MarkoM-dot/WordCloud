@@ -20,7 +20,7 @@ def calculate_frequencies(text):
 
 #I needed my own list of uninteresting words to remove from my WordCloud and customize it for different texts that I used. You are more than welcome to remove or append the words that you don't want the WC to show.
 
-    uninteresting_words = ["the", "however", "hundred", "kept", "saying", "may", "come", "either", "rather",
+    uninteresting_words = ["romeo","laur","pet","mus","nurse","mer","wife","jul","serv","par","rom","mon","cap","officer","tyb","ben","abr","greg","samp","chor","the", "however", "hundred", "kept", "saying", "may", "come", "either", "rather",
     "up", "every", "though", "thus", "since", "before", "most", "than", "about", "put", "these", "then", "say",
     "because", "therefore", "off", "could", "into", "having", "on", "take", "after", "said", "on", "himself", "men",
     "should", "upon", "other", "out", "only", "now", "many", "so", "yet", "not", "one", "for", "would", "made", "those",
