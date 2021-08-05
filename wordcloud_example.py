@@ -9,8 +9,8 @@ import sys
 
 os.chdir(sys.path[0])
 
-#Now in the command line you can write as your first argument the text file
-#Here is my PowerShell example as written in the command line:
+#Let your text file be the first argument in the command line.
+#A PowerShell example:
 #python wordcloud_example.py RomeoandJuliet.txt heart.jpeg
 #My first argument is my desired text and the second argument is my mask
 
@@ -18,7 +18,8 @@ text = open(sys.argv[1], 'r', encoding='utf-8').read()
 
 def calculate_frequencies(text):
 
-#I needed my own list of uninteresting words to remove from my WordCloud and customize it for different texts that I used. You are more than welcome to remove or append the words that you don't want the WC to show.
+#I needed my own list of uninteresting words to remove from my WordCloud and customize it for different texts that I used. 
+#You are more than welcome to remove or append the words that you don't want the WC to show.
 
     uninteresting_words = ["romeo","laur","pet","mus","nurse","mer","wife","jul","serv","par","rom","mon","cap","officer","tyb","ben","abr","greg","samp","chor","the", "however", "hundred", "kept", "saying", "may", "come", "either", "rather",
     "up", "every", "though", "thus", "since", "before", "most", "than", "about", "put", "these", "then", "say",
@@ -60,7 +61,8 @@ def calculate_frequencies(text):
     cloud = wordcloud.WordCloud(background_color = 'white', mask = custom_mask)
     cloud.generate_from_frequencies(dict_count)
 
-#The interpolation will adjust the smoothness of our image. You may choose your own and see what it might look like in the documentation(https://matplotlib.org/stable/gallery/images_contours_and_fields/interpolation_methods.html)
+#The interpolation will adjust the smoothness of our image. You may choose your own and see what it might 
+#look like in the documentation(https://matplotlib.org/stable/gallery/images_contours_and_fields/interpolation_methods.html)
 #Let's remove the x and y axis that would otherwise appear on our image.
 #We can see the WC image with plt.show().
 
